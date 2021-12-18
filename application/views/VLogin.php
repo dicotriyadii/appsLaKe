@@ -1,57 +1,66 @@
-<!doctype html>
-<html lang="en">
-  <head>
-  	<title>Apss Inventaris Buku</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="<?php echo base_url();?>asset/css/style.css">
-	</head>
-	<body>
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">Apps Inventaris Buku</h2>
-				</div>
-			</div>
-			<div class="row justify-content-center">
-				<div class="col-md-12 col-lg-10">
-					<div class="wrap d-md-flex">
-						<div class="img" style="background-image: url(<?php echo base_url();?>asset/images/bg-1.jpg);">
-			        </div>
-						<div class="login-wrap p-4 p-md-5">
-			      	<div class="d-flex">
-			      		<div class="w-100">
-			      			<h3 class="mb-4">Sign In</h3>
-			      		</div>
-			      	</div>
-					<form action="<?php echo base_url('prosesLogin');?>" method="post" class="signin-form">
-			      		<div class="form-group mb-3">
-			      			<label class="label" for="name">Username</label>
-			      			<input type="text" name="username" class="form-control" placeholder="Username" required>
-			      		</div>
-		                <div class="form-group mb-3">
-                            <label class="label" for="password">Password</label>
-                            <input type="password" name="password" class="form-control" placeholder="Password" required>
-		                </div>
-		                <div class="form-group">
-		            	    <button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
-		                </div>
-		          </form>
-		        </div>
-		      </div>
-				</div>
-			</div>
-		</div>
-	</section>
+<html>
+    <head>
+        <title>Login Forms</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="<?php echo base_url();?>asset/css/styleLogin.css">
+        </head>
+    </head>
+    <body>
+        <h2>Login / Sign Up On LaKe</h2>
+        <div class="container" id="container">
+            <div class="form-container sign-up-container">
+                <form action="#">
+                    <h1>Create Account</h1>
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <span>or use your email for registration</span>
+                    <input type="text" placeholder="Name" />
+                    <input type="email" placeholder="Email" />
+                    <input type="password" placeholder="Password" />
+                    <button>Sign Up</button>
+                </form>
+            </div>
+            <div class="form-container sign-in-container">
+                <form action="<?php echo base_url('prosesLogin') ?>" method = "post">
+                    <h1>Sign in</h1>
+                    <br>
+                    <input name="username" type="text" placeholder="Username" />
+                    <input name="password" type="password" placeholder="Password" />
+                    <a href="#">Forgot your password?</a>
+                    <button>Sign In</button>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1>Welcome Back!</h1>
+                        <p>To keep connected with us please login with your personal info</p>
+                        <button class="ghost" id="signIn">Sign In</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>Hello, Friend!</h1>
+                        <p>Enter your personal details and start journey with us</p>
+                        <button class="ghost" id="signUp">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+<script>
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
 
-  <script src="<?php echo base_url();?>asset/js/jquery.min.js"></script>
-  <script src="<?php echo base_url();?>asset/js/popper.js"></script>
-  <script src="<?php echo base_url();?>asset/js/bootstrap.min.js"></script>
-  <script src="<?php echo base_url();?>asset/js/main.js"></script>
+    signUpButton.addEventListener('click', () => {
+        container.classList.add("right-panel-active");
+    });
 
-	</body>
+    signInButton.addEventListener('click', () => {
+        container.classList.remove("right-panel-active");
+    });
+</script>
 </html>
-
